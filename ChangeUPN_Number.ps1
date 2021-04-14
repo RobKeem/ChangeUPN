@@ -1,8 +1,8 @@
 Import-Module ActiveDirectory
-$DomainController = 'ho-pth-dc09.dhw.wa.gov.au'
+$DomainController = '#Enter Domain Controller#'
 $OldUPN = Read-Host "Enter the current UPN for the user"
 $NewUPN = Read-Host "Enter the new UPN for the user"
-$ExchangeServer = 'ho-azu-exh01.dhw.wa.gov.au'
+$ExchangeServer = '#Enter on-premise Exchange Server#'
 $SAM = Get-ADUser -Filter {UserPrincipalName -eq $OldUPN}| Select-Object -ExpandProperty SamAccountName
 
 #Checks for duplicate UPNs
